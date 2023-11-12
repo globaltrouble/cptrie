@@ -9,15 +9,14 @@
 
 namespace cptrie {
 
-// used just to build
-struct Node {
-    std::unordered_map<char, std::unique_ptr<Node>> children;
-    std::optional<uint64_t> value;
-};
-
-std::optional<uint64_t> get(char const * key, uint32_t offset, char const * dataBegin);
-
-std::vector<char> build(cptrie::Node const * root);
+/**
+ * @brief Search for value by key in trie blob.
+ * 
+ * @param key C-style string ('\0' terminated) to search by
+ * @param dataBegin pointer to first byte of binary blob of trie
+ * @return std::nullopt in case target key was'n in trie, else its uin64_t value 
+*/
+std::optional<uint64_t> get(char const * key, char const * dataBegin);
 
 } // namespace cptrie
 

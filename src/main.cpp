@@ -1,3 +1,4 @@
+#include "build.hpp"
 #include "cptrie.hpp"
 
 #include <iostream>
@@ -123,7 +124,7 @@ int main(int argc, char const * const * argv) {
                     std::exit(9);
                 }
 
-                auto finalTrieValue = cptrie::get(key.c_str(), 0, data);
+                auto finalTrieValue = cptrie::get(key.c_str(), data);
                 if (!finalTrieValue.has_value()) {
                     std::cerr << "FinalValue for `" << key << "` was not found, expected: " << value << "\n";
                     std::exit(10);
@@ -181,7 +182,7 @@ int main(int argc, char const * const * argv) {
                         std::exit(9);
                     }
 
-                    auto finalTrieValue = cptrie::get(key.c_str(), 0, data);
+                    auto finalTrieValue = cptrie::get(key.c_str(), data);
                     if (!finalTrieValue.has_value()) {
                         std::cerr << "FinalValue for `" << key << "` was not found, expected: " << value << "\n";
                         std::exit(10);
