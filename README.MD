@@ -7,7 +7,7 @@ Used to build blob with trie data. Pre build trie blob significantly reduce libr
 
 #### Build library
 ```
-mkdir build && cd build && cmake --DCMAKE_BUILD_TYPE=Relase .. && cmake --build .
+mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Relase .. && cmake --build .
 ```
 
 #### Build binary blob
