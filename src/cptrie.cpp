@@ -40,7 +40,7 @@ std::optional<uint64_t> get(char const * key, uint32_t offset, char const * data
         if (*(childKey + i) == *key) {
             char localBuff[sizeof(uint32_t)];
             std::memcpy(localBuff, childOffset + i * sizeof(uint32_t), sizeof(uint32_t));
-            uint32_t nextOffset = *reinterpret_cast<uint64_t const *>(localBuff);
+            uint32_t nextOffset = *reinterpret_cast<uint32_t const *>(localBuff);
             return get(key+1, nextOffset, dataBegin);
         }
     }
